@@ -7,9 +7,10 @@ include("Include.jl")
 configuration_dictionary = TOML.parsefile(joinpath(_PATH_TO_CONFIG, "Configuration.toml"))
 port_number = configuration_dictionary["server"]["port"]
 host_ip_address = Sockets.getipaddr()
-#host_ip_address = "127.0.0.1"
 
-println("what is my ip: $(host_ip_address)")
+# show message to user -
+start_message = "Server started. address: $(host_ip_address) port: $(port_number) at $(now())";
+@info start_message
 
 # setup shared resources
 const PALIQUANT_SERVER_ROUTER = HTTP.Router()       # router handles HTTP request/response traffic
@@ -20,7 +21,7 @@ path_to_log_file = joinpath(_PATH_TO_LOG, configuration_dictionary["log"]["log_f
 io = open(path_to_log_file, "w+")
 simpleLogger = SimpleLogger(io)
 with_logger(simpleLogger) do
-    @info("Server startup ... completed phase 1")
+    @info(start_message)
     flush(io)
 end
 # ======================================================================================== #

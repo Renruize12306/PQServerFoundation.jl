@@ -48,12 +48,12 @@ function test_server_logic(request::HTTP.Request)::HTTP.Response
             flush(io)
         end
 
+        # check: give specific error messages per error type 
         response_json_dictionary["error"] = "Hmmm. that's not right"
         if (isa(error,KeyError) == true)
             response_json_dictionary["status"] = 0
             response_json_dictionary["error"] = "Key error: check your request for the correct keys"
         end
-
 
         # encode -
         buffer = JSON.json(response_json_dictionary)
