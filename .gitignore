@@ -23,6 +23,5 @@ docs/site/
 # environment.
 Manifest.toml
 
-# don't check in:
-log/PQTransactionServer.log
+# JV stuff -
 log/PQTransactionServer.log
