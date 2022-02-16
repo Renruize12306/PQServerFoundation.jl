@@ -1,4 +1,4 @@
-function test_server_logic(request::HTTP.Request)::HTTP.Response
+function test_api_endpoint(request::HTTP.Request)::HTTP.Response
 
     # initialize -
     response_json_dictionary = Dict{String,Any}()

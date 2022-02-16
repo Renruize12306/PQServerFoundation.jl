@@ -28,7 +28,7 @@ end
 
 # ======================================================================================== #
 # PHASE 2: DATABASE CONFIGURATION
-
+# Database setup code goes here 
 
 with_logger(simpleLogger) do
     @info("Server startup ... completed phase 2")
@@ -45,15 +45,18 @@ try
     pq_base_url = "/paliquant/transaction/api/v$(version)"
     
     # test endpoint -
-    HTTP.@register(PALIQUANT_SERVER_ROUTER, "POST", "$(pq_base_url)/test", test_server_logic)
+    HTTP.@register(PALIQUANT_SERVER_ROUTER, "POST", "$(pq_base_url)/test", test_api_endpoint)
 
     # start the server -
     HTTP.serve(PALIQUANT_SERVER_ROUTER, host_ip_address, port_number)
 
 finally
 
-    @info "Shutting down the pqserver ... move along. nothing to see here ..."
-    flush(io)
-    close(io)
+    shutdown_msg = "Shutting down the pqserver at $(now())"
+    with_logger(simpleLogger) do
+        @info(shutdown_msg)
+        flush(io)
+        close(io)
+    end
 end
 # ======================================================================================== #
