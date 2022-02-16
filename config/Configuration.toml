@@ -5,5 +5,4 @@ log_file_name="PQTransactionServer.log"
 port=8080
 
 [database]
-name="PQTransactions.db"  # transactions db -
-token="57e1a2c483afa15724cd95bd3d612ed4e1e3f70853b9a1db6d64200bbac96dd1"
+name="Database.db"  # transactions db -

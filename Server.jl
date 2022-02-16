@@ -28,10 +28,14 @@ end
 
 # ======================================================================================== #
 # PHASE 2: DATABASE CONFIGURATION
-# Database setup code goes here 
+const dbname = configuration_dictionary["database"]["name"]
+
+# connect to the database -
+const path_to_database_file = joinpath(_PATH_TO_DATABASE, dbname)
+const DB_CONNECTION = SQLite.DB(path_to_database_file)
 
 with_logger(simpleLogger) do
-    @info("Server startup ... completed phase 2")
+    @info("Server startup ... database connection init")
     flush(io)
 end
 # ======================================================================================== #

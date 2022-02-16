@@ -14,6 +14,7 @@ using CSV
 using Sockets
 using Logging
 using Dates
+using SQLite
 
 # load my codes -
 include(joinpath(_PATH_TO_SRC,"Endpoints.jl"))

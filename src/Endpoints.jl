@@ -17,7 +17,6 @@ function test_api_endpoint(request::HTTP.Request)::HTTP.Response
             flush(io)
         end
 
-
         # test logic: takes a string, reverses it and creates a nee field in the respone
         original_string = request_body_dictionary["to"];
         new_string = reverse(original_string)
@@ -50,8 +49,8 @@ function test_api_endpoint(request::HTTP.Request)::HTTP.Response
 
         # check: give specific error messages per error type 
         response_json_dictionary["error"] = "Hmmm. that's not right"
-        if (isa(error,KeyError) == true)
-            response_json_dictionary["status"] = 0
+        response_json_dictionary["status"] = 0
+        if (isa(error, KeyError) == true)
             response_json_dictionary["error"] = "Key error: check your request for the correct keys"
         end
 
