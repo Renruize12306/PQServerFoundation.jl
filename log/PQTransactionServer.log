@@ -1,16 +1,27 @@
-┌ Info: Server started. address: 128.253.116.246 port: 8080 at 2022-02-16T10:54:43.161
-└ @ Main /Users/jeffreyvarner/Desktop/julia_work/PQServerFoundation.jl/Server.jl:24
+┌ Info: Server started. address: 10.49.79.231 port: 8080 at 2022-02-19T15:58:39.706
+└ @ Main /Users/ruiren/Desktop/Software/Lab/Ruize/PQServerFoundation.jl/Server.jl:24
 ┌ Info: Server startup ... database connection init
-└ @ Main /Users/jeffreyvarner/Desktop/julia_work/PQServerFoundation.jl/Server.jl:38
-┌ Info: rcvd: Dict{String, Any}("to" => "efgh123")
-└ @ Main /Users/jeffreyvarner/Desktop/julia_work/PQServerFoundation.jl/src/Endpoints.jl:16
-┌ Info: rcvd: Dict{String, Any}("to" => "efgh123")
-└ @ Main /Users/jeffreyvarner/Desktop/julia_work/PQServerFoundation.jl/src/Endpoints.jl:16
-┌ Info: rcvd: Dict{String, Any}("to" => "efgh123")
-└ @ Main /Users/jeffreyvarner/Desktop/julia_work/PQServerFoundation.jl/src/Endpoints.jl:16
-┌ Info: rcvd: Dict{String, Any}("to" => "efgh123")
-└ @ Main /Users/jeffreyvarner/Desktop/julia_work/PQServerFoundation.jl/src/Endpoints.jl:16
-┌ Info: rcvd: Dict{String, Any}("to" => "efghabs1234123")
-└ @ Main /Users/jeffreyvarner/Desktop/julia_work/PQServerFoundation.jl/src/Endpoints.jl:16
-┌ Info: Shutting down the pqserver at 2022-02-16T10:56:41.218
-└ @ Main /Users/jeffreyvarner/Desktop/julia_work/PQServerFoundation.jl/Server.jl:61
+└ @ Main /Users/ruiren/Desktop/Software/Lab/Ruize/PQServerFoundation.jl/Server.jl:38
+┌ Info: rcvd: Dict{String, Any}("2" => "abc123")
+└ @ Main /Users/ruiren/Desktop/Software/Lab/Ruize/PQServerFoundation.jl/src/Endpoints.jl:16
+┌ Error: KeyError: key "to" not found
+│ Stacktrace:
+│  [1] getindex(h::Dict{String, Any}, key::String)
+│    @ Base ./dict.jl:482
+│  [2] test_api_endpoint(request::HTTP.Messages.Request)
+│    @ Main ~/Desktop/Software/Lab/Ruize/PQServerFoundation.jl/src/Endpoints.jl:21
+│  [3] handle
+│    @ ~/.julia/packages/HTTP/IAI92/src/Handlers.jl:253 [inlined]
+│  [4] handle(::HTTP.Handlers.RequestHandlerFunction{typeof(test_api_endpoint)}, ::HTTP.Streams.Stream{HTTP.Messages.Request, HTTP.ConnectionPool.Transaction{TCPSocket}})
+│    @ HTTP.Handlers ~/.julia/packages/HTTP/IAI92/src/Handlers.jl:276
+│  [5] handle(::HTTP.Handlers.Router{Symbol("##257")}, ::HTTP.Streams.Stream{HTTP.Messages.Request, HTTP.ConnectionPool.Transaction{TCPSocket}})
+│    @ HTTP.Handlers ~/.julia/packages/HTTP/IAI92/src/Handlers.jl:466
+│  [6] #4
+│    @ ~/.julia/packages/HTTP/IAI92/src/Handlers.jl:345 [inlined]
+│  [7] macro expansion
+│    @ ~/.julia/packages/HTTP/IAI92/src/Servers.jl:367 [inlined]
+│  [8] (::HTTP.Servers.var"#13#14"{HTTP.Handlers.var"#4#5"{HTTP.Handlers.Router{Symbol("##257")}}, HTTP.ConnectionPool.Transaction{TCPSocket}, HTTP.Streams.Stream{HTTP.Messages.Request, HTTP.ConnectionPool.Transaction{TCPSocket}}})()
+│    @ HTTP.Servers ./task.jl:411
+└ @ Main /Users/ruiren/Desktop/Software/Lab/Ruize/PQServerFoundation.jl/src/Endpoints.jl:46
+┌ Info: rcvd: Dict{String, Any}("to" => "abc123")
+└ @ Main /Users/ruiren/Desktop/Software/Lab/Ruize/PQServerFoundation.jl/src/Endpoints.jl:16
