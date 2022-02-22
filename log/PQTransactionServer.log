@@ -1,27 +1,28 @@
-┌ Info: Server started. address: 10.49.79.231 port: 8080 at 2022-02-19T15:58:39.706
+┌ Info: Server started. address: 10.49.79.231 port: 8080 at 2022-02-22T13:26:14.883
 └ @ Main /Users/ruiren/Desktop/Software/Lab/Ruize/PQServerFoundation.jl/Server.jl:24
 ┌ Info: Server startup ... database connection init
 └ @ Main /Users/ruiren/Desktop/Software/Lab/Ruize/PQServerFoundation.jl/Server.jl:38
-┌ Info: rcvd: Dict{String, Any}("2" => "abc123")
-└ @ Main /Users/ruiren/Desktop/Software/Lab/Ruize/PQServerFoundation.jl/src/Endpoints.jl:16
-┌ Error: KeyError: key "to" not found
-│ Stacktrace:
-│  [1] getindex(h::Dict{String, Any}, key::String)
-│    @ Base ./dict.jl:482
-│  [2] test_api_endpoint(request::HTTP.Messages.Request)
-│    @ Main ~/Desktop/Software/Lab/Ruize/PQServerFoundation.jl/src/Endpoints.jl:21
-│  [3] handle
-│    @ ~/.julia/packages/HTTP/IAI92/src/Handlers.jl:253 [inlined]
-│  [4] handle(::HTTP.Handlers.RequestHandlerFunction{typeof(test_api_endpoint)}, ::HTTP.Streams.Stream{HTTP.Messages.Request, HTTP.ConnectionPool.Transaction{TCPSocket}})
-│    @ HTTP.Handlers ~/.julia/packages/HTTP/IAI92/src/Handlers.jl:276
-│  [5] handle(::HTTP.Handlers.Router{Symbol("##257")}, ::HTTP.Streams.Stream{HTTP.Messages.Request, HTTP.ConnectionPool.Transaction{TCPSocket}})
-│    @ HTTP.Handlers ~/.julia/packages/HTTP/IAI92/src/Handlers.jl:466
-│  [6] #4
-│    @ ~/.julia/packages/HTTP/IAI92/src/Handlers.jl:345 [inlined]
-│  [7] macro expansion
-│    @ ~/.julia/packages/HTTP/IAI92/src/Servers.jl:367 [inlined]
-│  [8] (::HTTP.Servers.var"#13#14"{HTTP.Handlers.var"#4#5"{HTTP.Handlers.Router{Symbol("##257")}}, HTTP.ConnectionPool.Transaction{TCPSocket}, HTTP.Streams.Stream{HTTP.Messages.Request, HTTP.ConnectionPool.Transaction{TCPSocket}}})()
-│    @ HTTP.Servers ./task.jl:411
-└ @ Main /Users/ruiren/Desktop/Software/Lab/Ruize/PQServerFoundation.jl/src/Endpoints.jl:46
-┌ Info: rcvd: Dict{String, Any}("to" => "abc123")
-└ @ Main /Users/ruiren/Desktop/Software/Lab/Ruize/PQServerFoundation.jl/src/Endpoints.jl:16
+┌ Info: rcvd: Dict{String, Any}()
+└ @ Main /Users/ruiren/Desktop/Software/Lab/Ruize/PQServerFoundation.jl/src/Endpoints.jl:82
+┌ Info: resp: order book generated at 2022-02-22T13:26:21.102
+└ @ Main /Users/ruiren/Desktop/Software/Lab/Ruize/PQServerFoundation.jl/src/Endpoints.jl:101
+┌ Info: rcvd: Dict{String, Any}("orderid" => 10000, "price" => 99.01, "account_id" => 10101, "side" => "SELL_ORDER", "size" => 5)
+└ @ Main /Users/ruiren/Desktop/Software/Lab/Ruize/PQServerFoundation.jl/src/Endpoints.jl:153
+┌ Info: order submitted at 2022-02-22T13:26:24.866
+└ @ Main /Users/ruiren/Desktop/Software/Lab/Ruize/PQServerFoundation.jl/src/Endpoints.jl:176
+┌ Info: rcvd: Dict{String, Any}("side" => "BUY_ORDER", "size" => 2)
+└ @ Main /Users/ruiren/Desktop/Software/Lab/Ruize/PQServerFoundation.jl/src/Endpoints.jl:228
+┌ Info: order submitted at 2022-02-22T13:26:33.618
+└ @ Main /Users/ruiren/Desktop/Software/Lab/Ruize/PQServerFoundation.jl/src/Endpoints.jl:247
+┌ Info: rcvd: Dict{String, Any}()
+└ @ Main /Users/ruiren/Desktop/Software/Lab/Ruize/PQServerFoundation.jl/src/Endpoints.jl:299
+┌ Info: order book accessed at 2022-02-22T13:26:52.703
+└ @ Main /Users/ruiren/Desktop/Software/Lab/Ruize/PQServerFoundation.jl/src/Endpoints.jl:317
+┌ Info: rcvd: Dict{String, Any}("side" => "BUY_ORDER", "size" => 2)
+└ @ Main /Users/ruiren/Desktop/Software/Lab/Ruize/PQServerFoundation.jl/src/Endpoints.jl:228
+┌ Info: order submitted at 2022-02-22T13:26:56.520
+└ @ Main /Users/ruiren/Desktop/Software/Lab/Ruize/PQServerFoundation.jl/src/Endpoints.jl:247
+┌ Info: rcvd: Dict{String, Any}()
+└ @ Main /Users/ruiren/Desktop/Software/Lab/Ruize/PQServerFoundation.jl/src/Endpoints.jl:299
+┌ Info: order book accessed at 2022-02-22T13:26:59.280
+└ @ Main /Users/ruiren/Desktop/Software/Lab/Ruize/PQServerFoundation.jl/src/Endpoints.jl:317

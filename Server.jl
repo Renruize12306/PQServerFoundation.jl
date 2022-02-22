@@ -47,9 +47,14 @@ try
     # endpoints -
     version = 1
     pq_base_url = "/paliquant/transaction/api/v$(version)"
-    
+
     # test endpoint -
     HTTP.@register(PALIQUANT_SERVER_ROUTER, "POST", "$(pq_base_url)/test", test_api_endpoint)
+    HTTP.@register(PALIQUANT_SERVER_ROUTER, "POST", "$(pq_base_url)/vl_limit_order_book/init", vl_lob_init)
+    HTTP.@register(PALIQUANT_SERVER_ROUTER, "POST", "$(pq_base_url)/vl_limit_order_book/submit_limit_order", vl_lob_submit_limit_order)
+    HTTP.@register(PALIQUANT_SERVER_ROUTER, "POST", "$(pq_base_url)/vl_limit_order_book/submit_market_order", vl_lob_submit_market_order)
+    HTTP.@register(PALIQUANT_SERVER_ROUTER, "POST", "$(pq_base_url)/vl_limit_order_book/access_lob", vl_access)
+
 
     # start the server -
     HTTP.serve(PALIQUANT_SERVER_ROUTER, host_ip_address, port_number)
